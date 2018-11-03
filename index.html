@@ -46,7 +46,7 @@
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href=".">Home</a>
+                        <a href=".">Home <div id="timeD"></div></a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
@@ -207,7 +207,9 @@ docs/
         </div>
     </div>
 </div>
-
+<script type="text/javascript">
+       document.getElementById('timeD').innerHTML = new Date();
+</script>
 
     </body>
 </html>
