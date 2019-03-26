@@ -1,220 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
-        
-        
-        <link rel="shortcut icon" href="./img/favicon.ico">
-        <title>CHI</title>
-        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="./css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/highlight.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+<html>
+	<head>
+		<title>Chat</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<script type="text/javascript" src="jscolor.js"></script>
+ 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-        <script src="./js/jquery-1.10.2.min.js"></script>
-        <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/highlight.pack.js"></script> 
-    </head>
+ 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-    <body class="homepage">
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+ 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				function get16Str(n,len){
+					var s = n.toString(16);
+					var d = (len-s.length);
+					var pre = "";
+					while(d > 0){
+						pre += "0";
+						d--;
+					}
+					return pre + s;
+				};
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href=".">CHI</a>
-        </div>
+				function changeBackgroud() {
+					var a = $('#colora').val();
+					var b = $('#colorb').val();
+					// console.log('linear-gradient(to right, #'+get16Str(a,6)+' ,#'+get16Str(b,6)+')');
+					$('html').css('background', 'linear-gradient(to right, #'+get16Str(a,6)+' ,#'+get16Str(b,6)+')');
+					$('body').css('background', 'linear-gradient(to right, #'+get16Str(a,6)+' ,#'+get16Str(b,6)+')');
+				};
 
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href=".">Home <div id="timeD"></div></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-  <li class="dropdown-submenu">
-    <a href="#">a</a>
-    <ul class="dropdown-menu">
-            
-<li >
-    <a href="1/">HI1</a>
-</li>
-            
-<li >
-    <a href="1/">HI2</a>
-</li>
-            
-<li >
-    <a href="1/">HI3</a>
-</li>
-    </ul>
-  </li>
-                            
-  <li class="dropdown-submenu">
-    <a href="#">b</a>
-    <ul class="dropdown-menu">
-            
-<li >
-    <a href="1/">HI4</a>
-</li>
-            
-<li >
-    <a href="1/">HI5</a>
-</li>
-    </ul>
-  </li>
-                        </ul>
-                    </li>
-                </ul>
 
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                    <li class="disabled">
-                        <a rel="next" >
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="1/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-            </ul>
-        </div>
-    </div>
-</div>
+				function getRandomColor() {
+					var s = Math.round(Math.random()*parseInt('ffffff',16));
+					return s;
+				}
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#welcome-to-mkdocs">Welcome to MkDocs</a></li>
-            <li><a href="#commands">Commands</a></li>
-            <li><a href="#project-layout">Project layout</a></li>
-    </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+				function compare(a, b) {
+					if(a==b)
+						return 0;
+					return (parseInt(a,16) - parseInt(b,16)) > 0 ? 1:-1;
+				}
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="http://mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs help</code> - Print this help message.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
-        </div>
+				function getNextColorStr(colorStr, endStr) {
+					var dist = 3;
+					var rInt = parseInt(colorStr.substring(0,2),16);
+					var gInt = parseInt(colorStr.substring(2,4),16);
+					var bInt = parseInt(colorStr.substring(4,6),16);
+					var erInt = parseInt(endStr.substring(0,2),16);
+					var egInt = parseInt(endStr.substring(2,4),16);
+					var ebInt = parseInt(endStr.substring(4,6),16);
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>var base_url = '.';</script>
-        <script src="./js/base.js"></script>
-        <script src="./search/require.js"></script>
-        <script src="./search/search.js"></script>
+					var diffr = compare(erInt, rInt);
+					var diffg = compare(egInt, gInt);
+					var diffb = compare(ebInt, bInt);
+					if(Math.abs(erInt-rInt) > dist) {
+						rInt += diffr*dist;
+					} else if(Math.abs(egInt-gInt) > dist) {
+						gInt += diffg*dist;
+					} else if(Math.abs(ebInt-bInt) > dist) {
+						bInt += diffb*dist;
+					} else {
+						rInt = erInt;
+						gInt = egInt;
+						bInt = ebInt;
+					}
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
-            </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>&larr;</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>&rarr;</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div>
-<script type="text/javascript">
-       document.getElementById('timeD').innerHTML = new Date();
-</script>
 
-    </body>
+					return get16Str(rInt,2) + get16Str(gInt,2) + get16Str(bInt,2);
+				}
+				function changeColorInput(jqObj, colorStr) {
+					jqObj.val(colorStr);
+					jqObj.css('background-color','#'+colorStr);
+				}
+				function auto() {
+
+					if(interval == -1) {
+						curraStr = String($('#colora').val());
+						currbStr = String($('#colorb').val());
+						var endaStr = get16Str(getRandomColor(),6);
+						var endbStr = get16Str(getRandomColor(),6);
+						$("#colorSel").hide();
+						interval = setInterval(function(){
+							// console.log(curraStr+","+currbStr+"|"+endaStr+","+endbStr);
+
+							curraStr = getNextColorStr(curraStr, endaStr);
+							if(curraStr == endaStr) {
+								endaStr = get16Str(getRandomColor(),6);
+							}
+
+							currbStr = getNextColorStr(currbStr, endbStr);
+							if(currbStr == endbStr) {
+								endbStr = get16Str(getRandomColor(),6);
+							}
+
+							$('html').css('background', 'linear-gradient(to right, #'+curraStr+' ,#'+currbStr+')');
+							$('body').css('background', 'linear-gradient(to right, #'+curraStr+' ,#'+currbStr+')');
+							// changeColorInput($('#colora'),(curraStr));
+							// changeColorInput($('#colorb'),(currbStr));
+						}, time);
+						$("#auto").text("Stop");
+					} else {
+						$("#colorSel").show();
+						// console.log(curraStr+","+currbStr);
+						changeColorInput($('#colora'),(curraStr));
+						changeColorInput($('#colorb'),(currbStr));
+						$("#auto").text("Auto");
+						clearInterval(interval);
+						interval = -1;
+					}
+				}
+				function scrollToBottom() {
+					var objDiv = document.getElementById("msg_body");
+					objDiv.scrollTop = objDiv.scrollHeight;
+				}
+
+				function getMsgHtml(msg, type) {
+					var html = '';
+					var imgHtml ='<div class="img_cont_msg">';
+					imgHtml+='<img src="3.png" class="rounded-circle user_img_msg">';
+					imgHtml+='</div>';
+					if(type == 1) {
+						var msgHtml ='<div class="msg_cotainer">'+msg;
+						msgHtml+='<span class="msg_time">9:10 AM, Today</span>';
+						msgHtml+='</div>';
+						html += '<div class="d-flex justify-content-start mb-4">';
+						html += imgHtml;
+						html += msgHtml;
+					} else {
+						var msgHtml ='<div class="msg_cotainer_send">'+msg;
+						msgHtml+='<span class="msg_time_send">9:10 AM, Today</span>';
+						msgHtml+='</div>';
+						html += '<div class="d-flex justify-content-end mb-4">';
+						html += msgHtml;
+						html += imgHtml;
+					}
+					html+='</div>';
+					return html;
+				}
+
+				function sendMsg() {
+					var msg = $('#msgInput').val().trim();
+					// console.log(msg);
+					if(msg.length == 0) {
+						$('#msgInput').val('');
+						return;
+					}
+					$('#msg_body').append(getMsgHtml(msg,0));
+					$('#msgInput').val('');
+					scrollToBottom();
+				}
+
+				scrollToBottom();
+				// changeBackgroud();
+				$("#colora").change(function(){
+					// console.log(	$('#colora').val());
+					changeBackgroud();
+
+				});
+				$("#colorb").change(function(){
+					changeBackgroud();
+				});  
+				$("#auto").click(function(){
+					auto();
+				});
+				$('#sendBtn').click(function(){
+					sendMsg();
+				});
+				var interval = -1;
+				var curraStr = String($('#colora').val());
+				var currbStr = String($('#colorb').val());
+				var time = 200;
+			});
+
+		</script>
+	</head>
+	<!--Coded With Love By Mutiullah Samim-->
+	<body>
+
+		<div class="container-fluid h-100">
+					<nav class="navbar navbar-light navbar-expand-lg" >
+						<a class="navbar-brand" style="color: white;font-size: 25px;border-radius: 5px" href="javascript:void(0);">
+							<img src="3.png" class="rounded-circle user_img" style="width: 40px;height: 40px" />
+							<span>TCHAT</span>
+						</a>
+													
+						<!-- <div class="collapse navbar-collapse" id="navbarText"> -->
+							<ul class="navbar-nav mr-auto">
+								<!-- <li class="nav-item active">
+									<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">Features</a>
+								</li> -->
+							</ul>
+
+						    <span class="navbar-text">
+						    <span id="colorSel">
+						    	<input id="colora" class="jscolor form-control-sm col-xs-1" value="ffffff" />
+						    	<input id="colorb" class="jscolor form-control-sm col-xs-1" value="000000"/>
+						    </span>
+						    <span><button id="auto" type="button" class="btn btn-outline-light btn-sm">Auto</button></span>
+						    </span>
+<!-- 						  </div>
+ -->					</nav>
+			<div class="row justify-content-center h-100">
+			
+				<div class="col-md-8 col-xl-6 chat">
+					<div class="card">
+						<div class="card-header msg_head">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img src="3.png" class="rounded-circle user_img">
+									<span class="online_icon"></span>
+								</div>
+								<div class="user_info">
+									<span>Chat with Maryam Naz</span>
+									<p>1767 Messages</p>
+								</div>
+								<div class="video_cam">
+									<span><i class="fas fa-video"></i></span>
+									<span><i class="fas fa-phone"></i></span>
+								</div>
+							</div>
+							<!-- <span id="action_menu_btn"><i class="fas fa-ellipsis-v"></i></span>
+							<div class="action_menu">
+								<ul>
+									<li><i class="fas fa-user-circle"></i> View profile</li>
+									<li><i class="fas fa-users"></i> Add to close friends</li>
+									<li><i class="fas fa-plus"></i> Add to group</li>
+									<li><i class="fas fa-ban"></i> Block</li>
+								</ul>
+							</div> -->
+						</div>
+						<div id="msg_body" class="card-body msg_card_body">
+							<div class="d-flex justify-content-start mb-4">
+								<div class="img_cont_msg">
+									<img src="3.png" class="rounded-circle user_img_msg">
+								</div>
+								<div class="msg_cotainer">
+									Hi, how are you samim?
+									<span class="msg_time">8:40 AM, Today</span>
+								</div>
+							</div>
+							<div class="d-flex justify-content-start mb-4">
+								<div class="img_cont_msg">
+									<img src="3.png" class="rounded-circle user_img_msg">
+								</div>
+								<div class="msg_cotainer">
+									Hi, how are you samim?
+									<span class="msg_time">8:40 AM, Today</span>
+								</div>
+							</div>
+							<div class="d-flex justify-content-start mb-4">
+								<div class="img_cont_msg">
+									<img src="3.png" class="rounded-circle user_img_msg">
+								</div>
+								<div class="msg_cotainer">
+									Hi, how are you samim?
+									<span class="msg_time">8:40 AM, Today</span>
+								</div>
+							</div>
+							<div class="d-flex justify-content-end mb-4">
+								<div class="msg_cotainer_send">
+									Hi Maryam i am good tnx how about you?
+									<span class="msg_time_send">8:55 AM, Today</span>
+								</div>
+								<div class="img_cont_msg">
+							<img src="3.png" class="rounded-circle user_img_msg">
+								</div>
+							</div>
+							<div class="d-flex justify-content-start mb-4">
+								<div class="img_cont_msg">
+									<img src="3.png" class="rounded-circle user_img_msg">
+								</div>
+								<div class="msg_cotainer">
+									I am good too, thank you for your chat template
+									<span class="msg_time">9:00 AM, Today</span>
+								</div>
+							</div>
+							<div class="d-flex justify-content-end mb-4">
+								<div class="msg_cotainer_send">
+									You welcome Maryam
+									<span class="msg_time_send">9:05 AM, Today</span>
+								</div>
+								<div class="img_cont_msg">
+							<img src="3.png" class="rounded-circle user_img_msg">
+								</div>
+							</div>
+							<div class="d-flex justify-content-start mb-4">
+								<div class="img_cont_msg">
+									<img src="3.png" class="rounded-circle user_img_msg">
+								</div>
+								<div class="msg_cotainer">
+									I am looking for your next templates
+									<span class="msg_time">9:07 AM, Today</span>
+								</div>
+							</div>
+							<div class="d-flex justify-content-end mb-4">
+								<div class="msg_cotainer_send">
+									Ok, thank you have a good day
+									<span class="msg_time_send">9:10 AM, Today</span>
+								</div>
+								<div class="img_cont_msg">
+									<img src="3.png" class="rounded-circle user_img_msg">
+								</div>
+							</div>
+							<div class="d-flex justify-content-start mb-4">
+								<div class="img_cont_msg">
+									<img src="3.png" class="rounded-circle user_img_msg">
+								</div>
+								<div class="msg_cotainer">
+									Bye, see you
+									<span class="msg_time">9:12 AM, Today</span>
+								</div>
+							</div>
+						</div>
+						<div class="card-footer">
+							<div class="input-group">
+								<textarea id="msgInput" class="form-control type_msg" placeholder="Type your message..."></textarea>
+								<div class="input-group-append">
+									<span id="sendBtn" class="input-group-text send_btn"><!-- <i class="fas fa-location-arrow"></i> -->
+										SEND
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
 
-<!--
-MkDocs version : 0.17.3
-Build Date UTC : 2018-07-05 15:05:03
--->
